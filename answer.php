@@ -1,9 +1,10 @@
+<!-- answer.php -->
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content=" Positive integer multiplication question, in PHP" />
+  <meta name="description" content=" Positive integer multiplication question, in Javascript" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Kyle Matthew" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,30 +35,29 @@
           <div class="form-section">
             <h5>Place your positive numbers:</h5>
 
-            <form action="answer.php" method="post">
+            <div class="image-section">
+              <img src="./images/Counting-in-Chinese-Numbers-Numbers-0-10.png" alt="positive integer numbers image" />
+
+              <?php
+              $positiveIntegerNumber1 = $_POST['positive-integer-number-1'];
+              $positiveIntegerNumber2 = $_POST['positive-integer-number-2'];
+
+              if (is_numeric($positiveIntegerNumber1) && is_numeric($positiveIntegerNumber2) && $positiveIntegerNumber1 > 0 && $positiveIntegerNumber2 > 0) {
+                $product = $positiveIntegerNumber1 * $positiveIntegerNumber2;
+                echo "<h5>Product: $product</h5>";
+              } else {
+                echo "<h5>Please enter valid positive integers.</h5>";
+              }
+              ?>
 
 
-              <label for="positive-integer-number-1">What's</label><br />
-              <input type="text" id="positive-integer-number-1" name="positive-integer-number-1" /><br /><br />
-
-              <label for="positive-integer-number-2">X</label><br />
-              <input type="text" id="positive-integer-number-2" name="positive-integer-number-2" /><br /><br />
-
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-                type="submit">
-                CALCULATE
-              </button>
-
-              <div id="result-output"></div>
-          </div>
-
-          <div class="image-section">
-            <img src="./images/Counting-in-Chinese-Numbers-Numbers-0-10.png" alt="positive integer numbers image" />
-          </div>
-        </div>
-      </div>
+              <a href="index.php" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Return
+              </a>
+            </div>
     </main>
   </div>
 </body>
+
 
 </html>
